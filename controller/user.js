@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const sendMail = require("../utils/sendMail");
 const sendToken = require("../utils/jwtToken");
 const { isAuthenticated, isAdmin } = require("../middleware/auth");
-
+const FRONTEND_URL = process.env.FRONTEND_URL
 // create user
 router.post("/create-user", async (req, res, next) => {
   try {
