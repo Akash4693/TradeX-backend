@@ -39,7 +39,7 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
 
     const activationToken = createActivationToken(seller);
 
-    const activationUrl = `http://localhost:3000/seller/activation/${activationToken}`;
+    const activationUrl = `https://trade-x-frontend-omega.vercel.app/seller/activation/${activationToken}`;
 
     try {
       await sendMail({
@@ -172,6 +172,7 @@ router.get(
         sameSite: "none",
         secure: true,
       });
+      
       res.status(201).json({
         success: true,
         message: "Log out successful!",
