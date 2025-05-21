@@ -15,11 +15,11 @@ const eventSchema = new mongoose.Schema({
     },
     start_Date: {
         type: Date,
-        required: true,
+        required:[true,"Please enter your event start_Date!"],
       },
       Finish_Date: {
         type: Date,
-        required: true,
+        required:[true,"Please enter your event finish_Date!"],
       },
       status: {
         type: String,
@@ -30,10 +30,11 @@ const eventSchema = new mongoose.Schema({
     },
     originalPrice:{
         type: Number,
+        required: [true,"Please enter your event product price!"],
     },
     discountPrice:{
         type: Number,
-        required: [true,"Please enter your event product price!"],
+        required: [true,"Please enter your event product discount price!"],
     },
     stock:{
         type: Number,

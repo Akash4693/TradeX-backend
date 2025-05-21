@@ -42,8 +42,11 @@ router.post(
         productData.images = imagesLinks;
         productData.shop = shop;
 
-        const event = await Event.create(productData);
+        console.log("productData", productData);
 
+        const event = await Event.create(productData);
+        console.log("event", event);
+        console.log("event created successfully");
         res.status(201).json({
           success: true,
           event,
